@@ -1,0 +1,29 @@
+{
+	"name": "OJSol Dev Container",
+	"dockerComposeFile": "Compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"sleistner.vscode-fileutils",
+				"bierner.markdown-mermaid",
+				"DavidAnson.vscode-markdownlint",
+				"Gruntfuggly.todo-tree",
+				"GitHub.copilot",
+				"vadimcn.vscode-lldb",
+				"mutantdino.resourcemonitor",
+				"rust-lang.rust-analyzer",
+				"tamasfe.even-better-toml",
+				"serayuzgur.crates"
+			],
+			"settings": {
+				"git.autofetch": true,
+				"files.autoSave": "onFocusChange",
+				"editor.formatOnSave": true,
+				"resmon.show.cpufreq": false
+			}
+		}
+	},
+	"remoteUser": "root"
+}
