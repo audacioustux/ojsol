@@ -15,13 +15,21 @@
 				"mutantdino.resourcemonitor",
 				"rust-lang.rust-analyzer",
 				"tamasfe.even-better-toml",
-				"serayuzgur.crates"
+				"serayuzgur.crates",
+				"llvm-vs-code-extensions.vscode-clangd",
+				"jeff-hykin.better-cpp-syntax",
+				"BazelBuild.vscode-bazel"
 			],
 			"settings": {
 				"git.autofetch": true,
 				"files.autoSave": "onFocusChange",
 				"editor.formatOnSave": true,
-				"resmon.show.cpufreq": false
+				"resmon.show.cpufreq": false,
+				"clangd.arguments": [
+					"--header-insertion=never",
+					"--compile-commands-dir=${workspaceFolder}/",
+					"--query-driver=**"
+				]
 			}
 		}
 	},

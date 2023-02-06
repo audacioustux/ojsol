@@ -43,11 +43,28 @@ RUN curl -sL https://get.graalvm.org/jdk | bash -s -- $GRAALVM_NAME \
 ENV GRAALVM_HOME="/opt/${GRAALVM_NAME}"
 RUN source ~/.zshrc && sdk install java ${GRAALVM_VERSION:0:6}.r${JAVA_VERSION:4:2}-grl${GRAALVM_EDITION:0:1} ${GRAALVM_HOME}
 
-ENV PATH "${GRAALVM_HOME}/bin:$PATH"
+ENV PATH "$PATH:${GRAALVM_HOME}/bin"
 ENV JAVA_HOME "${GRAALVM_HOME}"
 
-### Install Scala and SBT
+### Install Scala toolchain
 RUN source ~/.zshrc && sdk install sbt
+
+### Install NVM
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+
+### Install nodejs
+RUN source ~/.zshrc && nvm install v18.13.0
+
+### Install clangd and clang-format
+RUN apt install -y clangd clang-format
+
+### Install bazel
+RUN source ~/.zshrc && npm install -g @bazel/bazelisk @bazel/buildifier
+
+### Install ibazel
+RUN git clone https://github.com/bazelbuild/bazel-watcher.git
+RUN cd bazel-watcher && source ~/.zshrc && bazel build //cmd/ibazel
+ENV PATH "$PATH:/bazel-watcher/bazel-bin/cmd/ibazel/ibazel_"
 
 ARG WORKSPACES_DIR="/workspaces"
 WORKDIR ${WORKSPACES_DIR}
