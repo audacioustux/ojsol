@@ -1,2 +1,7 @@
 # .env files
 **/*.env
+
+/.cache/
+/bazel-*
+/external/
+compile_commands.json
