@@ -1,5 +1,3 @@
-"""Bazel workspace file for ojsol."""
-
 workspace(
     name = "ojsol",
 )
@@ -8,10 +6,41 @@ load("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 load("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 
 http_archive(
+    name = "bazel_skylib",
+    sha256 = "f24ab666394232f834f74d19e2ff142b0af17466ea0c69a3f4c276ee75f6efce",
+    urls = [
+        "https://mirror.bazel.build/github.com/bazelbuild/bazel-skylib/releases/download/1.4.0/bazel-skylib-1.4.0.tar.gz",
+        "https://github.com/bazelbuild/bazel-skylib/releases/download/1.4.0/bazel-skylib-1.4.0.tar.gz",
+    ],
+)
+
+load("@bazel_skylib//:workspace.bzl", "bazel_skylib_workspace")
+
+bazel_skylib_workspace()
+
+http_archive(
     name = "com_google_googletest",
-    sha256 = "755f9a39bc7205f5a0c428e920ddad092c33c8a1b46997def3f1d4a82aded6e1",
-    strip_prefix = "googletest-5ab508a01f9eb089207ee87fd547d290da39d015",
-    urls = ["https://github.com/google/googletest/archive/5ab508a01f9eb089207ee87fd547d290da39d015.zip"],
+    strip_prefix = "googletest-0570e2d930a185bbc375be70d9ad96836b955a4f",
+    urls = ["https://github.com/google/googletest/archive/0570e2d930a185bbc375be70d9ad96836b955a4f.zip"],
+)
+
+http_archive(
+    name = "com_github_google_benchmark",
+    sha256 = "bcab43290d4ef38e8a44af8ecc93755712f6fc2080e4f0bfc4ceef4b62834dcb",
+    strip_prefix = "benchmark-84c71faa8126e4eedc2bb520352615cb4484d6ad",
+    urls = ["https://github.com/google/benchmark/archive/84c71faa8126e4eedc2bb520352615cb4484d6ad.zip"],
+)
+
+http_archive(
+    name = "com_google_absl",
+    strip_prefix = "abseil-cpp-2de126cc5826a8d464270ead65a7a9a7b012b741",
+    urls = ["https://github.com/abseil/abseil-cpp/archive/2de126cc5826a8d464270ead65a7a9a7b012b741.zip"],
+)
+
+http_archive(
+    name = "com_googlesource_code_re2",
+    strip_prefix = "re2-b025c6a3ae05995660e3b882eb3277f4399ced1a",
+    urls = ["https://github.com/google/re2/archive/b025c6a3ae05995660e3b882eb3277f4399ced1a.zip"],
 )
 
 git_repository(
@@ -23,7 +52,6 @@ git_repository(
 
 http_archive(
     name = "hedron_compile_commands",
-    sha256 = "d7ba7708816132f86f02864b9dba0c5abf249cc0fb035a34c430e4e538c87867",
     strip_prefix = "bazel-compile-commands-extractor-d3afb5dfadd4beca48bb027112d029f2d34ff0a0",
     url = "https://github.com/hedronvision/bazel-compile-commands-extractor/archive/d3afb5dfadd4beca48bb027112d029f2d34ff0a0.tar.gz",
 )
