@@ -1,4 +1,4 @@
-#include "greatest-common-divisor-of-strings.hpp"
+#include "solution.hpp"
 #include <gtest/gtest.h>
 
 TEST(GreatestCommonDivisorOfStringsTest, Example1) {

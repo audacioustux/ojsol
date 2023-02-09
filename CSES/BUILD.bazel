@@ -6,6 +6,7 @@ cc_library(
 cc_test(
     name = "tests",
     size = "small",
+    testonly = 1,
     srcs = glob(["**/tests.cpp"]),
     deps = [
         ":exercises",
