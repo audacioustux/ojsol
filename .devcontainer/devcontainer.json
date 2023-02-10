@@ -18,7 +18,11 @@
 				"serayuzgur.crates",
 				"llvm-vs-code-extensions.vscode-clangd",
 				"jeff-hykin.better-cpp-syntax",
-				"BazelBuild.vscode-bazel"
+				"BazelBuild.vscode-bazel",
+				"vscodevim.vim",
+				"PKief.material-icon-theme",
+				"PKief.material-product-icons",
+				"akamud.vscode-theme-onedark"
 			],
 			"settings": {
 				"git.autofetch": true,
@@ -29,7 +33,10 @@
 					"--header-insertion=never",
 					"--compile-commands-dir=${workspaceFolder}/",
 					"--query-driver=**"
-				]
+				],
+				"workbench.productIconTheme": "material-product-icons",
+				"workbench.iconTheme": "material-icon-theme",
+				"workbench.colorTheme": "Atom One Dark"
 			}
 		}
 	},
