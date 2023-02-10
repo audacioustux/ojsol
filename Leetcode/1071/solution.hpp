@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class Solution {
+class GreatestCommonDivisorOfStrings {
 public:
   int gcd(int a, int b) {
     if (b == 0)

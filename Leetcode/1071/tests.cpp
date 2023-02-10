@@ -2,7 +2,7 @@
 #include <gtest/gtest.h>
 
 TEST(GreatestCommonDivisorOfStringsTest, Example1) {
-  Solution s;
+  GreatestCommonDivisorOfStrings s;
   string str1 = "ABCABC";
   string str2 = "ABC";
   string expected = "ABC";
@@ -10,7 +10,7 @@ TEST(GreatestCommonDivisorOfStringsTest, Example1) {
 }
 
 TEST(GreatestCommonDivisorOfStringsTest, Example2) {
-  Solution s;
+  GreatestCommonDivisorOfStrings s;
   string str1 = "ABABAB";
   string str2 = "ABAB";
   string expected = "AB";
@@ -18,7 +18,7 @@ TEST(GreatestCommonDivisorOfStringsTest, Example2) {
 }
 
 TEST(GreatestCommonDivisorOfStringsTest, Example3) {
-  Solution s;
+  GreatestCommonDivisorOfStrings s;
   string str1 = "LEET";
   string str2 = "CODE";
   string expected = "";
@@ -26,7 +26,7 @@ TEST(GreatestCommonDivisorOfStringsTest, Example3) {
 }
 
 TEST(GreatestCommonDivisorOfStringsTest, Example4) {
-  Solution s;
+  GreatestCommonDivisorOfStrings s;
   string str1 = "ABCDEF";
   string str2 = "ABC";
   string expected = "";

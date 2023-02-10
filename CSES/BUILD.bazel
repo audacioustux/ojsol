@@ -1,15 +1,22 @@
 cc_library(
     name = "exercises",
-    hdrs = glob(["**/solution.hpp"]),
+    hdrs = glob(
+        ["**/solution.hpp"],
+        exclude = ["template/**"],
+    ),
 )
 
 cc_test(
     name = "tests",
     size = "small",
-    testonly = 1,
-    srcs = glob(["**/tests.cpp"]),
+    # testonly = 1,
+    srcs = glob(
+        ["**/tests.cpp"],
+        exclude = ["template/**"],
+    ),
     deps = [
         ":exercises",
+        # "@com_google_googletest//:gtest",
         "@com_google_googletest//:gtest_main",
     ],
 )

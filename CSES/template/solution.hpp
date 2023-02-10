@@ -2,9 +2,9 @@
 
 using namespace std;
 
-class Solution {
+class $ProblemName {
 public:
-  Solution(istream &cin = std::cin, ostream &cout = std::cout) {
-    
+  static void solve(istream &cin = std::cin, ostream &cout = std::cout) {
+    // add solution here
   }
 };

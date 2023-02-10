@@ -1,0 +1,32 @@
+#!/usr/bin/env bash
+
+# This script is used to get the solution in bin format with main function (for submission)
+# Usage: ./submit <problem_id>
+# Example: ./submit 1083
+
+# Check if the problem id is valid
+if [[ ! $1 =~ ^[0-9]+$ ]]; then
+    echo "Invalid problem id: $1"
+    exit 1
+fi
+
+# ensure no more than 2 arguments are passed
+if [[ $# -gt 1 ]]; then
+    echo "Too many arguments"
+    exit 1
+fi
+
+# Get the directory of this script
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+# get class name from solution.cpp
+class_name=$(grep -oP '(?<=class )\w+' $DIR/$1/solution.hpp)
+
+cat $DIR/$1/solution.hpp
+echo "int main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+
+    $class_name::solve();
+    return 0;
+}"

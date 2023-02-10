@@ -2,6 +2,7 @@
 
 using namespace std;
 
-class Solution {
+class $ProblemName {
 public:
+  // add solution here
 };

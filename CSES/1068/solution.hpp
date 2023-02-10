@@ -2,9 +2,9 @@
 
 using namespace std;
 
-class Solution {
+class WeirdAlgorithm {
 public:
-  Solution(istream &cin = std::cin, ostream &cout = std::cout) {
+  static void solve(istream &cin = std::cin, ostream &cout = std::cout) {
     long long n;
     cin >> n;
 
