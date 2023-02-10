@@ -9,14 +9,8 @@ static ostringstream TEST_IO(const char *input) {
 
   return out;
 }
-
 static void TEST_IO(const char *input, const char *expected) {
-  istringstream in(input);
-  ostringstream out;
-
-  Permutations::solve(in, out);
-
-  EXPECT_EQ(expected, out.str());
+  EXPECT_EQ(expected, TEST_IO(input).str());
 }
 
 TEST(PermutationsTest, Example1) {

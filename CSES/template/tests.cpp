@@ -1,13 +1,16 @@
 #include "solution.hpp"
 #include <gtest/gtest.h>
 
-static void TEST_IO(const char *input, const char *expected) {
+static ostringstream TEST_IO(const char *input) {
   istringstream in(input);
   ostringstream out;
 
   $ProblemName::solve(in, out);
 
-  EXPECT_EQ(expected, out.str());
+  return out;
+}
+static void TEST_IO(const char *input, const char *expected) {
+  EXPECT_EQ(expected, TEST_IO(input).str());
 }
 
 TEST($ProblemNameTest, Example1) { TEST_IO("", "\n"); }
