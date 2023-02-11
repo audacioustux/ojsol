@@ -25,7 +25,7 @@ class_name=$(grep -oP '(?<=class )\w+' $DIR/$1/solution.hpp)
 cat $DIR/$1/solution.hpp
 echo "int main() {
     ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
+    cin.tie(NULL); cout.tie(0);
 
     $class_name::solve();
     return 0;
