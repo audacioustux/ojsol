@@ -5,7 +5,7 @@ static ostringstream TEST_IO(const char *input) {
   istringstream in(input);
   ostringstream out;
 
-  $ProblemName::solve(in, out);
+  TrailingZeroes::solve(in, out);
 
   return out;
 }
@@ -13,4 +13,4 @@ static ostringstream TEST_IO(const char *input) {
   EXPECT_EQ(expected, TEST_IO(input).str());
 }
 
-TEST($ProblemNameTest, Example1) { TEST_IO("", "\n"); }
+TEST(TrailingZeroesTest, Example1) { TEST_IO("20", "4\n"); }

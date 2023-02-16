@@ -20,6 +20,7 @@ bazel_skylib_workspace()
 
 http_archive(
     name = "com_google_googletest",
+    sha256 = "6cc2b3848dbf8a3f2a9a58943a746ddceb4f2640fadea2cc86bb9634f20be0fc",
     strip_prefix = "googletest-0570e2d930a185bbc375be70d9ad96836b955a4f",
     urls = ["https://github.com/google/googletest/archive/0570e2d930a185bbc375be70d9ad96836b955a4f.zip"],
 )
@@ -52,6 +53,7 @@ git_repository(
 
 http_archive(
     name = "hedron_compile_commands",
+    sha256 = "d7ba7708816132f86f02864b9dba0c5abf249cc0fb035a34c430e4e538c87867",
     strip_prefix = "bazel-compile-commands-extractor-d3afb5dfadd4beca48bb027112d029f2d34ff0a0",
     url = "https://github.com/hedronvision/bazel-compile-commands-extractor/archive/d3afb5dfadd4beca48bb027112d029f2d34ff0a0.tar.gz",
 )

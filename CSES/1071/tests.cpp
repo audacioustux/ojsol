@@ -5,12 +5,21 @@ static ostringstream TEST_IO(const char *input) {
   istringstream in(input);
   ostringstream out;
 
-  $ProblemName::solve(in, out);
+  NumberSpiral::solve(in, out);
 
   return out;
 }
-[[maybe_unused]] static void TEST_IO(const char *input, const char *expected) {
+static void TEST_IO(const char *input, const char *expected) {
   EXPECT_EQ(expected, TEST_IO(input).str());
 }
 
-TEST($ProblemNameTest, Example1) { TEST_IO("", "\n"); }
+TEST(NumberSpiralTest, Example1) {
+  TEST_IO(R"(3
+2 3
+1 1
+4 2)",
+          R"(8
+1
+15
+)");
+}

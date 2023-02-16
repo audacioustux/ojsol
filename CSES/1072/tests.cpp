@@ -5,12 +5,22 @@ static ostringstream TEST_IO(const char *input) {
   istringstream in(input);
   ostringstream out;
 
-  $ProblemName::solve(in, out);
+  TwoKnights::solve(in, out);
 
   return out;
 }
-[[maybe_unused]] static void TEST_IO(const char *input, const char *expected) {
+static void TEST_IO(const char *input, const char *expected) {
   EXPECT_EQ(expected, TEST_IO(input).str());
 }
 
-TEST($ProblemNameTest, Example1) { TEST_IO("", "\n"); }
+TEST(TwoKnightsTest, Example1) {
+  TEST_IO("8", R"(0
+6
+28
+96
+252
+550
+1056
+1848
+)");
+}

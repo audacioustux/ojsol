@@ -11,4 +11,3 @@ static void TEST_IO(const char *input, const char *expected) {
 }
 
 TEST(IncreasingArrayTest, Example1) { TEST_IO("5 3 2 5 1 7", "5\n"); }
-// TEST(IncreasingArrayTest, Example2) { TEST_IsO("5 1 2 3 4 5", "0\n"); }
