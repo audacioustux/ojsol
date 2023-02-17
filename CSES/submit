@@ -27,6 +27,8 @@ echo "int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL); cout.tie(0);
 
-    $class_name::solve();
+    auto solution = new $class_name();
+    solution->solve();
+
     return 0;
 }"

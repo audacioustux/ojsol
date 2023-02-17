@@ -5,8 +5,7 @@ static ostringstream TEST_IO(const char *input) {
   istringstream in(input);
   ostringstream out;
 
-  auto solution = new $ProblemName(in, out);
-  solution->solve();
+  GrayCode::solve(in, out);
 
   return out;
 }
@@ -14,4 +13,10 @@ static ostringstream TEST_IO(const char *input) {
   EXPECT_EQ(expected, TEST_IO(input).str());
 }
 
-TEST($ProblemNameTest, Example1) { TEST_IO("", "\n"); }
+TEST(GrayCodeTest, Example1) {
+  TEST_IO("2", R"(00
+01
+11
+10
+)");
+}

@@ -5,8 +5,7 @@ static ostringstream TEST_IO(const char *input) {
   istringstream in(input);
   ostringstream out;
 
-  auto solution = new $ProblemName(in, out);
-  solution->solve();
+  CoinPiles::solve(in, out);
 
   return out;
 }
@@ -14,4 +13,13 @@ static ostringstream TEST_IO(const char *input) {
   EXPECT_EQ(expected, TEST_IO(input).str());
 }
 
-TEST($ProblemNameTest, Example1) { TEST_IO("", "\n"); }
+TEST(CoinPilesTest, Example1) {
+  TEST_IO(R"(3
+2 1
+2 2
+3 3)",
+          R"(YES
+NO
+YES
+)");
+}
