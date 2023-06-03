@@ -3,8 +3,8 @@
 using namespace std;
 
 class $ProblemName {
-  istream &cin;
-  ostream &cout;
+  [[maybe_unused]] istream &cin;
+  [[maybe_unused]] ostream &cout;
 
 public:
   $ProblemName(istream &cin = std::cin, ostream &cout = std::cout)
