@@ -1,0 +1,9 @@
+[submodule "misc/AOC"]
+	path = misc/AOC
+	url = git@github.com:audacioustux/AOC.git
+[submodule "misc/rubiks-code"]
+	path = misc/rubiks-code
+	url = https://github.com/audacioustux/rubiks-code.git
+[submodule "misc/AOC-2022-RS"]
+	path = misc/AOC-2022-RS
+	url = https://github.com/audacioustux/AOC-2022-RS.git
