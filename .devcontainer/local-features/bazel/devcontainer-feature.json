@@ -1,0 +1,7 @@
+{
+    "id": "bazel",
+    "name": "Bazel",
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/node"
+    ]
+}

@@ -1,0 +1,11 @@
+services:
+  devcontainer:
+    build:
+      context: .
+      args:
+        - GRAAL_EE_DOWNLOAD_TOKEN
+    volumes:
+      - ../..:/workspaces:cached
+    init: true
+
+    command: sleep infinity
