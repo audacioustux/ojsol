@@ -4,3 +4,5 @@
 /.cache/
 /bazel-*
 /external/
+
+compile_commands.json
