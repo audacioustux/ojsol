@@ -1,0 +1,4 @@
+cc_binary(
+    name = "Hackerrank",
+    srcs = glob(["*/*.cpp"])
+)

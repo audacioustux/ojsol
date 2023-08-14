@@ -14,25 +14,17 @@ public:
         cin >> minScore;
         maxScore = minScore;
 
-        int minScoreBreaks = 0;
-        int maxScoreBreaks = 0;
+        int minScoreBreaks = 0, maxScoreBreaks = 0;
 
-        for (int i = 1; i < n; ++i)
+        for (int i = 1, score; i < n; ++i)
         {
-            int score;
             cin >> score;
 
             if (score < minScore)
-            {
-                minScore = score;
-                ++minScoreBreaks;
-            }
+                minScore = score, ++minScoreBreaks;
 
             if (score > maxScore)
-            {
-                maxScore = score;
-                ++maxScoreBreaks;
-            }
+                maxScore = score, ++maxScoreBreaks;
         }
 
         cout << maxScoreBreaks << " " << minScoreBreaks << endl;

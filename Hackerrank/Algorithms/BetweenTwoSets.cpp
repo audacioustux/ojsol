@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <numeric>
 
 using namespace std;
 
@@ -18,27 +19,13 @@ public:
         for (int &bi : b)
             cin >> bi;
 
+        int a_lcm = reduce(a.begin(), a.end(), 1, lcm<int, int>);
+        int b_gcd = reduce(b.begin(), b.end(), 0, gcd<int, int>);
+
         int count = 0;
-        for (int x = 1; x <= 100; ++x)
-        {
-            bool ok = true;
-            for (int ai : a)
-                if (x % ai != 0)
-                {
-                    ok = false;
-                    break;
-                }
-            if (!ok)
-                continue;
-            for (int bi : b)
-                if (bi % x != 0)
-                {
-                    ok = false;
-                    break;
-                }
-            if (ok)
+        for (int i = a_lcm; i <= b_gcd; i += a_lcm)
+            if (b_gcd % i == 0)
                 ++count;
-        }
 
         cout << count << endl;
     }

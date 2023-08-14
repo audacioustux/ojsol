@@ -28,19 +28,13 @@ public:
             if (a[i] == b[j])
             {
                 ++pairs;
-                ++i;
-                ++j;
+                ++i, ++j;
             }
-            else if (a[i] < b[j])
-                ++i;
             else
-                ++j;
+                a[i] < b[j] ? ++i : ++j;
         }
 
-        if (pairs == n)
-            --pairs;
-        else
-            ++pairs;
+        pairs == n ? --pairs : ++pairs;
 
         cout << pairs << endl;
     }

@@ -10,16 +10,15 @@ public:
         int n;
         cin >> n;
 
-        cin.ignore();
-
         set<pair<char, char>> P;
 
         string str;
-
+        cin.ignore();
         getline(cin, str);
-        for (int i = 0; i < str.length(); i++)
-            for (int j = i + 1; j < str.length(); j++)
-                P.insert(make_pair(str[i], str[j]));
+
+        for (auto i = str.begin(); i != str.end(); ++i)
+            for (auto j = i + 1; j != str.end(); ++j)
+                P.insert(make_pair(*i, *j));
 
         int mx = 0;
         for (auto i : P)

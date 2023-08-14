@@ -11,12 +11,10 @@ public:
         cin >> n >> k;
 
         int sum = 0;
-        for (int i = 0; i < n; ++i)
+        for (int i = 0, bill; i < n; ++i)
         {
-            int bill;
             cin >> bill;
-            if (i != k)
-                sum += bill;
+            sum += (i != k ? bill : 0);
         }
 
         int b;

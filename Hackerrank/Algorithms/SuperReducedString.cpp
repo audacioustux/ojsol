@@ -23,12 +23,12 @@ public:
             cout << "Empty String" << endl;
         else
         {
-            string ans;
-            while (!st.empty())
-            {
-                ans += st.top();
+            string ans(st.size(), '\0');
+            generate(ans.begin(), ans.end(), [&st]()
+                     {
+                char c = st.top();
                 st.pop();
-            }
+                return c; });
             reverse(ans.begin(), ans.end());
             cout << ans << endl;
         }

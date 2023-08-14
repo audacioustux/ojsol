@@ -11,8 +11,8 @@ public:
         cin >> num_cities >> num_stations;
 
         vector<int> stations(num_stations);
-        for (int i = 0; i < num_stations; i++)
-            cin >> stations[i];
+        for (int &station : stations)
+            cin >> station;
 
         sort(stations.begin(), stations.end());
 

@@ -16,17 +16,18 @@ public:
             cin >> m >> n;
 
             vector<int> costs(n);
-            for (int i = 0; i < n; ++i)
-                cin >> costs[i];
+            for (int &cost : costs)
+                cin >> cost;
 
             unordered_map<int, int> costToIndex;
             for (int i = 0; i < n; ++i)
             {
                 int cost = costs[i];
                 int otherCost = m - cost;
-                if (costToIndex.find(otherCost) != costToIndex.end())
+                auto it = costToIndex.find(otherCost);
+                if (it != costToIndex.end())
                 {
-                    cout << costToIndex[otherCost] + 1 << " " << i + 1 << endl;
+                    cout << it->second + 1 << " " << i + 1 << endl;
                     break;
                 }
                 costToIndex[cost] = i;

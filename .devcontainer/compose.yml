@@ -2,8 +2,6 @@ services:
   devcontainer:
     build:
       context: .
-      args:
-        - GRAAL_EE_DOWNLOAD_TOKEN
     volumes:
       - ../..:/workspaces:rw,cached
     init: true

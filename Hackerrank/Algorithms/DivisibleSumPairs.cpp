@@ -11,22 +11,15 @@ public:
         cin >> n >> k;
 
         vector<int> ar(n);
-        for (int i = 0; i < n; i++)
-        {
-            cin >> ar[i];
-        }
+        for (int &ai : ar)
+            cin >> ai;
 
         int count = 0;
-        for (int i = 0; i < n; i++)
-        {
-            for (int j = i + 1; j < n; j++)
-            {
-                if ((ar[i] + ar[j]) % k == 0)
-                {
-                    count++;
-                }
-            }
-        }
+        for (auto i = ar.begin(); i != ar.end(); ++i)
+            for (auto j = i + 1; j != ar.end(); ++j)
+                if ((*i + *j) % k == 0)
+                    ++count;
+
         cout << count << endl;
     }
 };

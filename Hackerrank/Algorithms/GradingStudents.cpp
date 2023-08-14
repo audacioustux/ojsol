@@ -16,10 +16,7 @@ public:
             cin >> grade;
 
             if (grade < 38)
-            {
                 cout << grade << endl;
-                continue;
-            }
 
             int nextMultipleOfFive = (grade / 5 + 1) * 5;
             if (nextMultipleOfFive - grade < 3)

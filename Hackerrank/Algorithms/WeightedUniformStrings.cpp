@@ -13,6 +13,7 @@ public:
         unordered_set<int> weights;
         int weight = 0;
         char prev = '\0';
+
         for (char c : s)
         {
             if (c != prev)
